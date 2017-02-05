@@ -1,0 +1,168 @@
+
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.4.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.68 (7288) x86_64-apple-darwin13.4.0]
+
+[History restored from /Users/atawua/.Rapp.history]
+
+> library(swirl)
+
+| Hi! Type swirl() when you are ready to begin.
+
+> swirl
+function (resume.class = "default", ...) 
+{
+    removeTaskCallback("mini")
+    e <- new.env(globalenv())
+    class(e) <- c("environment", resume.class)
+    cb <- function(expr, val, ok, vis, data = e) {
+        e$expr <- expr
+        e$val <- val
+        e$ok <- ok
+        e$vis <- vis
+        return(resume(e, ...))
+    }
+    addTaskCallback(cb, name = "mini")
+    invisible()
+}
+<environment: namespace:swirl>
+> swirl()
+
+| Welcome to swirl! Please sign in. If you've been here before, use the same name as you did then. If you are new, call yourself something unique.
+
+What shall I call you? atawua
+
+| Would you like to continue with one of these lessons?
+
+1: R Programming Basic Building Blocks
+2: R Programming Workspace and Files
+3: No. Let me start something new.
+
+Selection: 3
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers       4: Vectors                    5: Missing Values             6: Subsetting Vectors      
+ 7: Matrices and Data Frames   8: Logic                      9: Functions                 10: lapply and sapply         11: vapply and tapply         12: Looking at Data         
+13: Simulation                14: Dates and Times           15: Base Graphics             
+
+Selection: 9
+  |                                                                                                                                                                                   |   0%
+
+| Functions are one of the fundamental building blocks of the R language. They are small pieces of reusable code that can be treated like any other R object.
+
+...
+  |====                                                                                                                                                                               |   2%
+| If you've worked through any other part of this course, you've probably used some functions already. Functions are usually characterized by the name of the function followed by
+| parentheses.
+
+...
+  |=======                                                                                                                                                                            |   4%
+| Let's try using a few basic functions just for fun. The Sys.Date() function returns a string representing today's date. Type Sys.Date() below and see what happens.
+
+> Sys.Date()
+[1] "2017-01-25"
+
+| Excellent job!
+  |===========                                                                                                                                                                        |   6%
+| Most functions in R return a value. Functions like Sys.Date() return a value based on your computer's environment, while other functions manipulate input data in order to compute a
+| return value.
+
+...
+  |===============                                                                                                                                                                    |   8%
+| The mean() function takes a vector of numbers as input, and returns the average of all of the numbers in the input vector. Inputs to functions are often called arguments. Providing
+| arguments to a function is also sometimes called passing arguments to that function. Arguments you want to pass to a function go inside the function's parentheses. Try passing the
+| argument c(2, 4, 5) to the mean() function.
+
+> mean(c(2,4,5))
+[1] 3.666667
+
+| You're the best!
+  |==================                                                                                                                                                                 |  10%
+| Functions usually take arguments which are variables that the function operates on. For example, the mean() function takes a vector as an argument, like in the case of mean(c(2,6,8)).
+| The mean() function then adds up all of the numbers in the vector and divides that sum by the length of the vector.
+
+...
+  |======================                                                                                                                                                             |  12%
+| In the following question you will be asked to modify a script that will appear as soon as you move on from this question. When you have finished modifying the script, save your changes
+| to the script and type submit() and the script will be evaluated. There will be some comments in the script that opens up, so be sure to read them!
+
+...
+  |==========================                                                                                                                                                         |  14%
+| The last R expression to be evaluated in a function will become the return value of that function. We want this function to take one argument, x, and return x without modifying it.
+| Delete the pound sign so that x is returned without any modification. Make sure to save your script before you type submit().
+
+> boring_function <- function(x) {}
+> 
+> boring <- function(x) {x}
+> submit()
+
+| Sourcing your script...
+
+
+| You're close...I can feel it! Try it again.
+
+| Make sure to delete the pound sign so the last expression in the function is just x.
+
+> boring_function <- function(x) { x }
+> submit()
+
+| Sourcing your script...
+
+
+| That's not exactly what I'm looking for. Try again.
+
+| Make sure to delete the pound sign so the last expression in the function is just x.
+
+2017-01-25 16:16:46.154 R[3538:46720] *** WARNING: Method convertPointFromBase: in class NSView is deprecated on 10.7 and later. It should not be used in new applications. 
+> boring_function <- function(x) {
++   x
++ }
+> submit()
+
+| Sourcing your script...
+
+
+| Not quite, but you're learning! Try again.
+
+| Make sure to delete the pound sign so the last expression in the function is just x.
+
+> function(x)
++ boring_function <- function(x) {}
+function(x)
+boring_function <- function(x) {}
+> boring_function <- function(x) { x }
+Error: unexpected input in "boring_function <- function(x) {β"
+2017-01-25 16:24:59.912 R[3538:46720] -deltaZ is deprecated for NSEventTypeMagnify.  Please use -magnification.
+> boring_function <- function(x) {x}
+> submit()
+
+| Sourcing your script...
+
+
+| Not quite right, but keep trying.
+
+| Make sure to delete the pound sign so the last expression in the function is just x.
+
+> boring_function <- function(x) {x}
